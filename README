@@ -1,0 +1,47 @@
+FastAPI standard project template
+# START RUN WITH PYTHON 3.9 ON WINDOWS
+    python3.9 -m venv venv
+    venv\Scripts\activate.bat
+    venv\scripts\python.exe -m pip install --upgrade pip
+    pip3.9 install -r requirements.txt
+
+    #Optional: pip3.9 freeze > requirements.txt
+
+    ----Create Mariadb or Mysql DB, rename .env.sample -> .env and edit user,password,dbname
+    #alembic init alembic
+    #alembic revision -m "user table"
+    alembic upgrade head
+    uvicorn app.main:app --host 0.0.0.0 --port 8888 --reload OR uvicorn app.main:app --host 0.0.0.0 --port 8888
+
+# START RUN WITH PYTHON >=3.7 ON LINUX
+    virtualenv -p python3 venv
+    source venv/bin/activate
+    pip install -r requirements.txt
+    ----Create Mariadb or Mysql DB, rename .env.sample -> .env and edit user,password,dbname    
+    cp env.example .env, edit user,password,dbname
+    alembic upgrade head
+    uvicorn app.main:app --host 0.0.0.0 --port 8888 --reload OR uvicorn app.main:app --host 0.0.0.0 --port 8888
+
+# END RUN: venv\Scripts\deactivate.bat
+
+## Project structure
+├── alembic  
+│   ├── versions    // file migrations  
+│   └── env.py  
+├── application  
+│   ├── controllers // API controllers 
+│   ├── core        // include file config load,env variable &  verify JWT access-token  function
+│   ├── db          // DB session config
+│   ├── helpers     // inclue login_manager, paging function ...
+│   ├── models      // Database model, intergrate with alembic make auto generate migration  
+│   ├── schemas     // Pydantic Schema  
+│   └── services    // Inclue logic CRUD DB  
+|   └── main.py
+├── tests  
+|──router
+|   └── api_router
+├── alembic.ini   
+├── env.example  
+├── logging.ini     // Logging config
+├── README.md  
+└── requirements.txt
