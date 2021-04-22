@@ -6,6 +6,7 @@ from app.core.security import get_password_hash
 
 #fake = faker.Faker()
 
+
 class DefaultUser:
     def user(data={}): 
         user = User(

@@ -6,6 +6,7 @@ from fastapi.responses import JSONResponse
 from app.schemas.sche_base import ResponseSchemaBase
 
 
+
 class ExceptionType(enum.Enum):
     MS_UNAVAILABLE = 500, '990', 'The system is under maintenance, please try again later'
     MS_INVALID_API_PATH = 500, '991', 'The system is under maintenance, please try again later'

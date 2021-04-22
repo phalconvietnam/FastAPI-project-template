@@ -14,6 +14,7 @@ from app.schemas.sche_token import TokenPayload
 from app.schemas.sche_user import UserCreateRequest, UserUpdateMeRequest, UserUpdateRequest, UserRegisterRequest
 
 
+
 class UserService(object):
     __instance = None
 

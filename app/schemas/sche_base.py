@@ -6,6 +6,7 @@ from pydantic import BaseModel
 T = TypeVar("T")
 
 
+
 class ResponseSchemaBase(BaseModel):
     __abstract__ = True
 
