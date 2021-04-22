@@ -7,9 +7,9 @@ from app.schemas.sche_base import ResponseSchemaBase
 
 
 class ExceptionType(enum.Enum):
-    MS_UNAVAILABLE = 500, '990', 'Hệ thống đang bảo trì, quý khách vui lòng thử lại sau'
-    MS_INVALID_API_PATH = 500, '991', 'Hệ thống đang bảo trì, quý khách vui lòng thử lại sau'
-    DATA_RESPONSE_MALFORMED = 500, '992', 'Có lỗi xảy ra, vui lòng liên hệ admin!'
+    MS_UNAVAILABLE = 500, '990', 'The system is under maintenance, please try again later'
+    MS_INVALID_API_PATH = 500, '991', 'The system is under maintenance, please try again later'
+    DATA_RESPONSE_MALFORMED = 500, '992', 'An error has occurred, please contact the administrator!'
 
     def __new__(cls, *args, **kwds):
         value = len(cls.__members__) + 1
@@ -51,7 +51,7 @@ async def validation_exception_handler(request, exc):
 async def fastapi_error_handler(request, exc):
     return JSONResponse(
         status_code=500,
-        content=jsonable_encoder(ResponseSchemaBase().custom_response('500', "Có lỗi xảy ra, vui lòng liên hệ admin!"))
+        content=jsonable_encoder(ResponseSchemaBase().custom_response('500', "An error has occurred, please contact the administrator!"))
     )
 
 
