@@ -52,6 +52,7 @@ async def fastapi_error_handler(request, exc):
     return JSONResponse(
         status_code=500,
         content=jsonable_encoder(ResponseSchemaBase().custom_response('500', "An error has occurred, please contact the administrator!"))
+        
     )
 
 
