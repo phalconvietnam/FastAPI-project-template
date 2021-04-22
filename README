@@ -1,5 +1,7 @@
 FastAPI standard project template
 # START RUN WITH PYTHON 3.9 ON WINDOWS
+    git clone https://github.com/phalconvietnam/FastAPI-project-template.git
+    cd FastAPI-project-template
     python3.9 -m venv venv
     venv\Scripts\activate.bat
     venv\scripts\python.exe -m pip install --upgrade pip
@@ -14,6 +16,9 @@ FastAPI standard project template
     uvicorn app.main:app --host 0.0.0.0 --port 8888 --reload OR uvicorn app.main:app --host 0.0.0.0 --port 8888
 
 # START RUN WITH PYTHON >=3.7 ON LINUX
+    git clone https://github.com/phalconvietnam/FastAPI-project-template.git
+    cd FastAPI-project-template
+    
     virtualenv -p python3 venv
     source venv/bin/activate
     pip install -r requirements.txt
