@@ -1,0 +1,30 @@
+FIXES (Python 3.9 CENTOS 7) error ModuleNotFoundError: No module named '_ctypes' 
+
+Step1:
+yum -y install wget make gcc openssl-devel bzip2-devel
+yum -y install zlib zlib-devel
+yum -y install libffi-devel 
+
+Step2: ----ReInstall Python3.9-----------
+
+wget https://www.python.org/ftp/python/3.9.4/Python-3.9.4.tgz
+tar xzf Python-3.9.4.tgz
+cd Python-3.9.4/
+./configure --enable-optimizations
+make altinstall
+ln -sfn /usr/local/bin/python3.9 /usr/bin/python3.9
+ln -sfn /usr/local/bin/pip3.9 /usr/bin/pip3.9
+pip3.9 install --upgrade pip
+
+Step 3: deactivate current Virtual Environments
+
+Delete venv folder if exists
+
+virtualenv -p python3.9 venv
+source venv/bin/activate
+pip install -r requirements.txt
+
+IT OK
+
+
+
